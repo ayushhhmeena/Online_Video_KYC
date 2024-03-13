@@ -2,7 +2,7 @@ import speech_recognition as sr
 import re
 
 def extract_info(text):
-    name_pattern = r"(?:Name: ([\w\s]+))|(?:Name ([\w\s]+))|(?:my name is ([\w\s]+))"
+    name_pattern = r"(?:Name: ([\w\s]+))|(?:Name is ([\w\s]+))|(?:my name is ([\w\s]+))"
     dob_pattern = r"(?:Date of Birth is (\d{1,2}) (\w+) (\d{4}))"
     address_pattern = r"(?:Address: ([\w\s\.,]+))|(?:address is ([\w\s\.,]+))"
 
@@ -28,8 +28,13 @@ def extract_info(text):
 # Initialize recognizer
 recognizer = sr.Recognizer()
 
+# Variables to store extracted information
+name = None
+dob = None
+address = None
+
 # Capture microphone input for name
-while True:
+while name is None:
     with sr.Microphone() as source:
         print("Listening for name...")
         # Adjust for ambient noise
@@ -44,14 +49,13 @@ while True:
             name, _, _ = extract_info(text)
             if name:
                 print("Name recognized:", name)
-                break  # Break the loop if name is recognized
         except sr.UnknownValueError:
-            print("Speech Recognition was not Successful please try again.")
+            print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:
-            print("Error In SR; {0}".format(e))
+            print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
 # Capture microphone input for Date of Birth
-while True:
+while dob is None:
     with sr.Microphone() as source:
         print("Listening for Date of Birth...")
         # Adjust for ambient noise
@@ -66,14 +70,13 @@ while True:
             _, dob, _ = extract_info(text)
             if dob:
                 print("Date of Birth recognized:", dob)
-                break  # Break the loop if Date of Birth is recognized
         except sr.UnknownValueError:
-            print("Speech Recognition was not Successful please try again.")
+            print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:
-            print("Error In SR; {0}".format(e))
+            print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
 # Capture microphone input for Address
-while True:
+while address is None:
     with sr.Microphone() as source:
         print("Listening for Address...")
         # Adjust for ambient noise
@@ -88,14 +91,10 @@ while True:
             _, _, address = extract_info(text)
             if address:
                 print("Address recognized:", address)
-                break  # Break the loop if Address is recognized
         except sr.UnknownValueError:
-            print("Speech Recognition was not Successful please try again.")
+            print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:
-            print("Error In SR; {0}".format(e))
-
-# Extract information from recognized text
-name, dob, address = extract_info(text)
+            print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
 # Display extracted information
 print("Name:", name)

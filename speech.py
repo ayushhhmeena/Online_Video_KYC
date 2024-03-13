@@ -45,7 +45,7 @@ while name is None:
         try:
             # Use Google Web Speech API to recognize audio
             text = recognizer.recognize_google(audio)
-            print("You said:", text)
+            print("\nYou said:", text)
             name, _, _ = extract_info(text)
             if name:
                 print("Name recognized:", name)
@@ -57,7 +57,7 @@ while name is None:
 # Capture microphone input for Date of Birth
 while dob is None:
     with sr.Microphone() as source:
-        print("Listening for Date of Birth...")
+        print("\nListening for Date of Birth...")
         # Adjust for ambient noise
         recognizer.adjust_for_ambient_noise(source)
         # Capture the audio
@@ -66,7 +66,7 @@ while dob is None:
         try:
             # Use Google Web Speech API to recognize audio
             text = recognizer.recognize_google(audio)
-            print("You said:", text)
+            print("\nYou said:", text)
             _, dob, _ = extract_info(text)
             if dob:
                 print("Date of Birth recognized:", dob)
@@ -78,7 +78,7 @@ while dob is None:
 # Capture microphone input for Address
 while address is None:
     with sr.Microphone() as source:
-        print("Listening for Address...")
+        print("\nListening for Address...")
         # Adjust for ambient noise
         recognizer.adjust_for_ambient_noise(source)
         # Capture the audio
@@ -87,7 +87,7 @@ while address is None:
         try:
             # Use Google Web Speech API to recognize audio
             text = recognizer.recognize_google(audio)
-            print("You said:", text)
+            print("\nYou said:", text)
             _, _, address = extract_info(text)
             if address:
                 print("Address recognized:", address)
@@ -97,6 +97,7 @@ while address is None:
             print("Error In SR; {0}".format(e))
 
 # Display extracted information
-print("Name:", name)
+print("\nName:", name)
 print("Date of Birth:", dob)
 print("Address:", address)
+print("\n")

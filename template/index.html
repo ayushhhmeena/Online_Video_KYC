@@ -98,6 +98,28 @@
             .catch(function(err) {
                 console.error('Error accessing the camera/microphone:', err);
             });
+            mediaRecorder.onstop = async function() {
+                var audioBlob = new Blob(chunks, { 'type' : 'audio/wav' });
+                var audioUrl = URL.createObjectURL(audioBlob);
+                audioOutput.innerHTML = '<audio controls src="' + audioUrl + '">Your browser does not support the audio element.</audio>';
+
+                // New code to send the audio blob to the server
+                let formData = new FormData();
+                formData.append('file', audioBlob, 'audio.wav');
+                
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Process and display the response data as needed
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            };
     </script>
 </body>
 </html>

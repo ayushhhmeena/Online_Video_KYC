@@ -50,9 +50,9 @@ while name is None:
             if name:
                 print("Name recognized:", name)
         except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
+            print("Speech Recognition was not Successful please try again.")
         except sr.RequestError as e:
-            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+            print("Error In SR; {0}".format(e))
 
 # Capture microphone input for Date of Birth
 while dob is None:
@@ -71,9 +71,9 @@ while dob is None:
             if dob:
                 print("Date of Birth recognized:", dob)
         except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
+            print("Speech Recognition was not Successful please try again.")
         except sr.RequestError as e:
-            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+            print("Error In SR; {0}".format(e))
 
 # Capture microphone input for Address
 while address is None:
@@ -92,9 +92,9 @@ while address is None:
             if address:
                 print("Address recognized:", address)
         except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
+            print("Speech Recognition was not Successful please try again.")
         except sr.RequestError as e:
-            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+            print("Error In SR; {0}".format(e))
 
 # Display extracted information
 print("Name:", name)

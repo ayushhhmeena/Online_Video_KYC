@@ -3,9 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Camera & Microphone Access</title>
+    <style>
+        #video-container {
+            margin: 20px auto;
+            width: 100%;
+            max-width: 600px;
+        }
+        #video-element {
+            width: 100%;
+            height: auto;
+            border: 2px solid black;
+        }
+        #audio-container {
+            margin: 20px auto;
+            width: 100%;
+            max-width: 600px;
+        }
+        #audio-output {
+            margin-top: 10px;
+        }
+        #capture-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Camera & Microphone Access</h1>
+    <div id="video-container">
+        <video id="video-element" autoplay muted></video>
+    </div>
+    <button id="picture-btn">Take Picture</button>
+    <button id="record-btn">Start Recording</button>
+    <div id="audio-container">
+        <p id="audio-output"></p>
+    </div>
+
+    <script>
+        // Accessing the camera
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(function(stream) {
+                var videoElement = document.getElementById('video-element');
+                var audioOutput = document.getElementById('audio-output');
+                videoElement.srcObject = stream;
+
+                // Function to take a picture
+                document.getElementById('picture-btn').addEventListener('click', function() {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = videoElement.videoWidth;
+                    canvas.height = videoElement.videoHeight;
+                    var context = canvas.getContext('2d');
+                    context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+                    // Convert the canvas to a data URL
+                    var dataURL = canvas.toDataURL('image/png');
+
+                    // Display the picture on the page
+                    var img = new Image();
+                    img.src = dataURL;
+                    document.body.appendChild(img);
+                });
+
+                // Function to record audio
+                var mediaRecorder;
+                var chunks = [];
+                var isRecording = false;
+
+                document.getElementById('record-btn').addEventListener('click', function() {
+                    if (!isRecording) {
+                        mediaRecorder = new MediaRecorder(stream);
+                        mediaRecorder.start();
+                        isRecording = true;
+                        setTimeout(function() {
+                            mediaRecorder.stop();
+                            isRecording = false;
+                        }, 15000); // Record for 15 seconds
+
+                        mediaRecorder.ondataavailable = function(event) {
+                            chunks.push(event.data);
+                        };
+
+                        mediaRecorder.onstop = function() {
+                            var audioBlob = new Blob(chunks, { 'type' : 'audio/wav' });
+                            var audioUrl = URL.createObjectURL(audioBlob);
+                            audioOutput.innerHTML = '<audio controls src="' + audioUrl + '">Your browser does not support the audio element.</audio>';
+                        };
+                    }
+                });
+            })
+            .catch(function(err) {
+                console.error('Error accessing the camera/microphone:', err);
+            });
+    </script>
 </body>
 </html>

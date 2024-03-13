@@ -68,9 +68,9 @@ while True:
                 print("Date of Birth recognized:", dob)
                 break  # Break the loop if Date of Birth is recognized
         except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
+            print("Speech Recognition was not Successful please try again.")
         except sr.RequestError as e:
-            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+            print("Error In SR; {0}".format(e))
 
 # Capture microphone input for Address
 while True:
@@ -90,9 +90,9 @@ while True:
                 print("Address recognized:", address)
                 break  # Break the loop if Address is recognized
         except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
+            print("Speech Recognition was not Successful please try again.")
         except sr.RequestError as e:
-            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+            print("Error In SR; {0}".format(e))
 
 # Extract information from recognized text
 name, dob, address = extract_info(text)

@@ -46,9 +46,9 @@ while True:
                 print("Name recognized:", name)
                 break  # Break the loop if name is recognized
         except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
+            print("Speech Recognition was not Successful please try again.")
         except sr.RequestError as e:
-            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+            print("Error In SR; {0}".format(e))
 
 # Capture microphone input for Date of Birth
 while True:

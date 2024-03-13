@@ -106,7 +106,7 @@
                 // New code to send the audio blob to the server
                 let formData = new FormData();
                 formData.append('file', audioBlob, 'audio.wav');
-                
+
                 fetch('/upload', {
                     method: 'POST',
                     body: formData,

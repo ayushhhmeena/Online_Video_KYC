@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #d1d0cf;
+    background-color: #01161e;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,12 +11,16 @@ body {
 
 .container {
     width: 50%;
-    height: 25%;
+    height: 21%;
     max-width: 600px;
     padding: 20px;
-    background-color: #cff1f0;
-    border-radius: 8px;
+    background-color: #aec3b0;
+    border-radius: 18px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    -o-border-radius: 18px;
 }
 
 h1 {
@@ -42,14 +46,18 @@ input[type="file"] {
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #e0e1dd;
     color: #000000;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 40px;
     font-size: 16px;
     width: 100%;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
 }
 
 button:hover {

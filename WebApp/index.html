@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KYC Verification</title>
+    <title>KYC Verification - Step 1</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="progress-bar">
-            <div class="step active"></div>
-            <div class="step"></div>
-            <div class="step"></div>
-        </div>
-        <div class="container">
-            <h1>KYC Verification</h1>
-            <form action="/text_extract" id="kyc-form" method="post">
-                <div class="form-group">
-                    <label for="id-card">Upload ID Card (Aadhar card or PAN card):</label>
-                    <input type="file" id="id-card" accept="image/*" required>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="output"></div>
-        </div>
+    <div class="progress-bar">
+        <div class="step active"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+    </div>
+    <div class="container">
+        <h1>KYC Verification - Step 1</h1>
+        <form id="id-card-form">
+            <div class="form-group">
+                <label for="id-card">Upload ID Card (Aadhar card or PAN card):</label>
+                <input type="file" id="id-card" accept="image/*" required>
+            </div>
+            <button type="submit">Next</button>
+        </form>
     </div>
     <script src="script.js"></script>
 </body>

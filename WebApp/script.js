@@ -16,3 +16,17 @@ document.getElementById('kyc-form').addEventListener('submit', async (e) => {
         document.getElementById('output').textContent = 'An error occurred. Please try again later.';
     }
 });
+
+document.getElementById('id-card-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    window.location.href = 'face-verification.html';
+});
+
+function verifyFace() {
+    window.location.href = 'user-details-verification.html';
+}
+
+
+document.getElementById('user-details-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+});

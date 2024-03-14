@@ -1,7 +1,10 @@
 <h1 align="center">E-KYC-Verification</h1> 
 E-KYC is mostly done through the video calling or mainly offline process.
 So, Our model will cut out the other person for the KYC 
-<h1>![PHOTO-2024-03-14-17-41-06](https://github.com/ayushhhmeena/Online_Video_KYC/assets/87579312/25053ae9-701e-4a41-8a57-4ec7c47bc866)</h1>h1
+
+![image](https://github.com/ayushhhmeena/Online_Video_KYC/assets/87579312/8ebf5aac-c0df-4541-a102-73af99e3a54c)
+
+
 <h2>Features:</h2>
 <p>Automatic deocument verify of name,DOB,address by extracting text from the document uploaded with the data entered by the user(Done by using the pytesseract).</p>
 <p>Person identity verify with the image on the adhar card by using the AI model (Done by using cv2 and facerecognition)</p>

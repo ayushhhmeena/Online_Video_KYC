@@ -22,5 +22,6 @@ So, Our model will cut out the other person for the KYC
 
 <h1>Video Demonstration</h1>
 
-https://github.com/ayushhhmeena/Online_Video_KYC/assets/87579312/6e2aa398-2f28-4189-abbd-6f7682c2bf72
+
+https://github.com/ayushhhmeena/Online_Video_KYC/assets/87579312/15f4921b-8015-4765-8a5a-197db0aa4ab8
 

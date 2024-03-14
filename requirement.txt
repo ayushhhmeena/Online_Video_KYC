@@ -1,0 +1,7 @@
+sudo apt install cmake # for Linux with apt
+pip install dlib # important dependency
+pip3 install face_recognition # for Python 3
+pip install opencv-python
+pip install pytesseract
+pip install flask
+pip install SpeechRecognition

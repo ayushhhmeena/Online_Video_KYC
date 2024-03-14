@@ -2,6 +2,8 @@
 E-KYC is mostly done through the video calling or mainly offline process.
 So, Our model will cut out the other person for the KYC 
 
+![PHOTO-2024-03-14-17-41-06](https://github.com/ayushhhmeena/Online_Video_KYC/assets/87579312/caee1a23-601b-49ac-8bc8-63d7a952650b)
+
 
 <h2>Features:</h2>
 <p>Automatic deocument verify of name,DOB,address by extracting text from the document uploaded with the data entered by the user(Done by using the pytesseract).</p>

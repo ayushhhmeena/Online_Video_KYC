@@ -1,4 +1,4 @@
-![PHOTO-2024-03-14-17-41-06](https://github.com/ayushhhmeena/Online_Video_KYC/assets/87579312/6f161443-79d0-4e72-9598-a982d6177aff)<h1 align="center">E-KYC-Verification</h1> 
+<h1 align="center">E-KYC-Verification</h1> 
 E-KYC is mostly done through the video calling or mainly offline process.
 <img src="https://drive.google.com/file/d/1hRr5VQctobp-fcGpFhpVudbOY7stpgCx/view?usp=drive_link" alt="Jayesh" width="30px">
 So, Our model will cut out the other person for the KYC 

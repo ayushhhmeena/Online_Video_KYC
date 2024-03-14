@@ -1,26 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #01161e;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Ensure the container takes the full height of the viewport */
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.step {
+    width: 30px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.step.active {
+    background-color: #4caf50; /* Green color for active step */
 }
 
 .container {
-    width: 50%;
-    height: 21%;
     max-width: 600px;
     padding: 20px;
-    background-color: #aec3b0;
-    border-radius: 18px;
+    background-color: #fff;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    -webkit-border-radius: 18px;
-    -moz-border-radius: 18px;
-    -ms-border-radius: 18px;
-    -o-border-radius: 18px;
 }
 
 h1 {

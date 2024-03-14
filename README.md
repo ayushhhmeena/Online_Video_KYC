@@ -12,8 +12,10 @@ So, Our model will cut out the other person for the KYC
 
 <h2>Tech Stack Used:</h2>
 <ul>
-<li>python</li> 
-<li>HTML</li>
+<li>HTML</li> 
 <li>CSS</li>
-<li>ML modals</li>
+<li>JavaScript</li>
+<li>Python</li>
+<li>Flask</li>
+<li>ML Models</li>
 </ul>

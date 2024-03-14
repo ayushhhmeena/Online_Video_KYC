@@ -3,7 +3,8 @@ import speech_recognition as sr
 import re
 from werkzeug.utils import secure_filename
 import os
-
+from PIL import Image 
+from pytesseract import pytesseract 
 app = Flask(__name__)
 
 # Temporary folder to store audio files
@@ -18,6 +19,23 @@ def index():
     # print(render_template('index.html'))
     return render_template('index.html')
 
+def text_extract():
+    # Defining paths to tesseract.exe  
+    # and the image we would be using 
+    path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+    ##image_path = r"D:\Github_App\Online_Video_KYC\DataBase_For_ID_Card\10004.jpeg"
+    # Opening the image & storing it in an image object 
+    ##img = Image.open(image_path) 
+    img=request.form['id-card']
+    
+    # Providing the tesseract  
+    # executable location to pytesseract library 
+    pytesseract.tesseract_cmd = path_to_tesseract 
+    # Passing the image object to  
+    # image_to_string() function 
+    # This function will 
+    # extract the text from the image 
+    text = pytesseract.image_to_string(img) 
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
